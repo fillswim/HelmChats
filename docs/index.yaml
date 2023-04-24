@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  My-Template-HelmChart:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-04-24T20:30:52.845206639Z"
+    description: My template Helm chart
+    digest: acf60e1f7ab82441c82d1514436840df2ea93dc225ca1e3f3e90b36538b152f3
+    name: My-Template-HelmChart
+    type: application
+    urls:
+    - https://fillswim.github.io/HelmChats/My-Template-HelmChart-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-04-24T20:30:52.844311606Z"
