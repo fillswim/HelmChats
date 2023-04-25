@@ -13,6 +13,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: {{ .Release.Name }}-service # Название сервиса, на который будет отправляться запрос
+            name: {{ .Release.Name }}-service           # Название сервиса, на который будет отправляться запрос
             port: 
               number: {{ .Values.servicePort }}
