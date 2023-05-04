@@ -23,6 +23,7 @@ spec:                                                 ### Спецификаци
 
       - name: {{ .Release.Name }}-container               # Контейнер
         image: {{ .Values.container.image }}
+        imagePullPolicy: Always
         resources:
           limits:
             memory: "1024Mi"
