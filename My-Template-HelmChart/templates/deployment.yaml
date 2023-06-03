@@ -18,6 +18,9 @@ spec:                                                 ### Спецификаци
       labels:                                             # Лейблы подов Должны совпадать с selector
         app: {{ .Release.Name }}-pod                      #! Сервис будет искать поды с этими лейблы, чтобы на них распределять трафик
 
+        annotations:
+          checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+
     spec:
       containers:                                         # Какие контейнеры будут запускаться в подах
 
