@@ -19,7 +19,7 @@ spec:                                                 ### Спецификаци
         app: {{ .Release.Name }}-pod                      #! Сервис будет искать поды с этими лейблы, чтобы на них распределять трафик
 
       annotations:
-        rollme: {{ randAlphaNum 5 | quote }}
+        rollme: {{ randAlphaNum 5 | quote }}              # Для обновления подов каждый раз
 
     spec:
       containers:                                         # Какие контейнеры будут запускаться в подах
