@@ -1,6 +1,8 @@
 ![Helm](images/Helm.png)
 
-# HelmChats
+# My Helm Chats repository
+
+[https://fillswim.github.io/HelmChats/](https://fillswim.github.io/HelmChats/)
 
 ## Создание Helm Chart
 
