@@ -88,6 +88,8 @@ helm install \
 
 ## Проверка работы приложения
 
+#### [https://gifservice.fillswim.com](https://gifservice.fillswim.com/swagger-ui/index.html)
+
 проверка один раз:
 ```bash
 curl -Is https://gifservice.fillswim.com/swagger-ui/index.html
