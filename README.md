@@ -1,3 +1,5 @@
+![Helm](images/Helm.png)
+
 # HelmChats
 
 ### Create package
