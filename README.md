@@ -1,4 +1,4 @@
-![Helm](images/Helm.png)
+![Helm](images/Helm_new.png)
 
 # My Helm Chats repository
 
