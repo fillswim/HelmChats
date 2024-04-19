@@ -1,13 +1,23 @@
 # Default values for my template Helm Chart
+
+# Образ
 container:
-  image: nginx:latest                             # {{ .Values.container.image }}
+  image: nginx:latest       # {{ .Values.container.image }}
 
-containerPort: 80                                 # {{ .Values.containerPort }}
+# Порт на контейнере
+containerPort: 80           # {{ .Values.containerPort }}
 
-servicePort: 81                                   # {{ .Values.servicePort }}
+# Порт на сервисе
+servicePort: 81             # {{ .Values.servicePort }}
 
-cpuUtilization: 50                                # {{ .Values.cpuUtilization }}
+# Ограничение по CPU
+cpuUtilization: 50          # {{ .Values.cpuUtilization }}
 
-memoryUtilization: 80                             # {{ .Values.memoryUtilization }}
+# Ограничение по памяти
+memoryUtilization: 80       # {{ .Values.memoryUtilization }}
 
-host: nginx.fillswim.com                          # {{ .Values.host }}
+# Класс Ingress контроллера
+ingressClassName: nginx     # {{ .Values.ingressClassName }}
+
+# Адрес публикации
+host: nginx.fillswim.com    # {{ .Values.host }}
