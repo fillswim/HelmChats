@@ -3,12 +3,12 @@ entries:
   my-template-helmchart:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-04-19T15:26:35.555032255+03:00"
+    created: "2024-04-19T15:53:47.185040618+03:00"
     description: My template helm chart
-    digest: 07a830e9f1e8ca08795eb7ff28234ae590075ca5ff293e5d4bb1dcbee49d4647
+    digest: 503c9f511a475fa903fb8bb28527e325f74b775215c73e948098d6c5ad4388b7
     name: my-template-helmchart
     type: application
     urls:
     - https://fillswim.github.io/HelmChats/my-template-helmchart-0.0.7.tgz
     version: 0.0.7
-generated: "2024-04-19T15:26:35.554522512+03:00"
+generated: "2024-04-19T15:53:47.184693097+03:00"
