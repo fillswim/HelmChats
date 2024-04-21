@@ -1,0 +1,24 @@
+# Helm Chart values ver. 0.0.8
+# Tomcat values for my template Helm Chart
+
+# Образ
+container:
+  image: tomcat:8.5.38
+
+# Порт на контейнере
+containerPort: 8080
+
+# Порт на сервисе
+servicePort: 8081
+
+# Ограничение по CPU
+cpuUtilization: 50
+
+# Ограничение по памяти
+memoryUtilization: 80
+
+# Адрес публикации
+host: tomcat.fillswim.local
+
+# Класс Ingress контроллера
+ingressClassName: nginx
