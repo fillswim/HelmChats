@@ -22,7 +22,7 @@
 |   \---README.md
 ```
 
-#### 1. Запаковать папку с helm chart в архив
+#### 1. Запаковать папку с helm chart в архивв
 ```bash
 helm package My-Template-HelmChart/
 ```
