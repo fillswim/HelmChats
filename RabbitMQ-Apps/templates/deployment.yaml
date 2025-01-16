@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:                                             ### Описание деплоймента
+  name: {{ .Release.Name }}-deployment                  # Название деплоймента (будет использоваться в автоселлере)
+  labels:                                               # Лейбл деплоймента
+    app: {{ .Release.Name }}-deployment-app
+    
+spec:                                                 ### Спецификация
+  selector:                                             # С какими подами будет работать деплоймент должны совпадать с (template/metadata/labels)
+
+    matchLabels:                                        # С какими лейблами подов будет работать деплоймент
+      app: {{ .Release.Name }}-pod
+  
+  minReadySeconds: 20                                   # Под будет считаться готовым через 20 секунд после создания (а то будет 502 Bad Gateway)
+
+  template:                                           ### Описание подов
+
+    metadata:                                           ## Описание пода
+      labels:                                             # Лейблы подов Должны совпадать с selector
+        app: {{ .Release.Name }}-pod                      #! Сервис будет искать поды с этими лейблы, чтобы на них распределять трафик
+
+      # annotations:
+      #   rollme: {{ randAlphaNum 5 | quote }}              # Для обновления подов каждый раз
+
+    spec:
+      containers:                                         # Какие контейнеры будут запускаться в подах
+
+      - name: {{ .Release.Name }}-container               # Контейнер
+        image: {{ .Values.container.image.registry }}/{{ .Values.container.image.imagename }}:{{ .Values.container.image.imagetag }}
+        imagePullPolicy: {{ .Values.container.image.pullPolicy }}
+        resources:
+          limits:
+            memory: "{{ .Values.container.resources.limits.memory }}"
+            cpu: "{{ .Values.container.resources.limits.cpu }}"
+
+        ports:
+        - containerPort: {{ .Values.container.port }}      #!! Порт на поде
+
+        env:
+        - name: RABBITMQ_HOST
+          value: {{ .Values.rabbitmq.host }}
+        - name: RABBITMQ_PORT
+          value: "{{ .Values.rabbitmq.port }}"
+        - name: RABBITMQ_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.existingSecret.secretName }}
+              key: {{ .Values.existingSecret.userKey }}
+        - name: RABBITMQ_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.existingSecret.secretName }}
+              key: {{ .Values.existingSecret.passwordKey }}

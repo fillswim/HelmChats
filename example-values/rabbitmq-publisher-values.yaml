@@ -1,0 +1,42 @@
+# Helm Chart values ver. 0.0.1
+
+container:
+  # Образ
+  image:
+    registry: nexus.fillswim.local:8086
+    imagename: rabbitmq-publisher
+    imagetag: latest
+  # Порт на контейнере
+  port: 80
+
+# HorizontalPodAutoscaler
+autoscling:
+  # Enable HPA resource
+  enabled: false
+
+# Сервис
+service:
+  # Enable service resource
+  enabled: true
+  # Порт на сервисе
+  port: 81
+
+# Ingress
+ingress:
+  # Enable ingress resource
+  enabled: true
+  # Класс Ingress контроллера
+  ingressClassName: nginx
+  # url
+  host: rabbitmq-publisher.fillswim.local
+
+# RabbitMQ Connection
+rabbitmq:
+  host: 192.168.2.228
+  port: 5672
+
+# Secret c логином и паролем
+existingSecret:
+  secretName: rabbitmq-my-secret
+  userKey: rabbitmq-user
+  passwordKey: rabbitmq-password

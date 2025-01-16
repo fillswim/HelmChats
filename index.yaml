@@ -3,7 +3,7 @@ entries:
   my-template-helmchart:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-04-23T16:41:56.06274914+03:00"
+    created: "2025-01-16T15:35:57.499608215+03:00"
     description: My template helm chart
     digest: 8904ea40ce8eac48acde18a814c944d5d09cbe2884fb24dd3d0fd6be7deff743
     name: my-template-helmchart
@@ -11,4 +11,15 @@ entries:
     urls:
     - https://fillswim.github.io/HelmChats/my-template-helmchart-0.0.9.tgz
     version: 0.0.9
-generated: "2024-04-23T16:41:56.062329983+03:00"
+  rabbitmq-app:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2025-01-16T15:35:57.50004972+03:00"
+    description: My helm chart to install RabbitMQ test application
+    digest: 9afbf6ece01008b98cd23bd44c4c86fce3f7c163e5977dd88f4ca5c13c0a1def
+    name: rabbitmq-app
+    type: application
+    urls:
+    - https://fillswim.github.io/HelmChats/rabbitmq-app-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-01-16T15:35:57.499051888+03:00"

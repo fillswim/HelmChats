@@ -1,0 +1,60 @@
+# Helm Chart values ver. 0.0.1
+
+# Deployment
+container:
+  # Образ
+  image:
+    registry: nexus.fillswim.local:8086
+    imagename: rabbitmq-publisher
+    imagetag: latest
+    pullPolicy: Always
+
+  # Порт на контейнере
+  port: 80
+
+  # Ограничение ресурсов
+  resources:
+    limits:
+      memory: "1024Mi"
+      cpu: "500m"
+
+# HorizontalPodAutoscaler
+autoscling:
+  # Enable HPA resource
+  enabled: false
+  # Минимальное количество подов
+  minReplicas: 2
+  # Максимальное количество подов
+  maxReplicas: 3
+  # Ограничение по CPU
+  cpuUtilization: 50
+  # Ограничение по памяти
+  memoryUtilization: 80
+
+# Сервис
+service:
+  # Enable service resource
+  enabled: false
+  # Порт на сервисе
+  port: 81
+
+# Ingress
+ingress:
+  # Enable ingress resource
+  enabled: false
+  # Класс Ingress контроллера
+  ingressClassName: nginx
+  # url
+  host: rabbitmq-publisher.example.local
+
+# RabbitMQ Connection
+rabbitmq:
+  # Параметры подключения
+  host: 127.0.0.1
+  port: 5672
+
+# Secret c логином и паролем
+existingSecret:
+  secretName: rabbitmq-secret
+  userKey: rabbitmq-user
+  passwordKey: rabbitmq-password

@@ -1,0 +1,13 @@
+apiVersion:   v2
+
+# Создание пакета
+# helm package RabbitMQ-Apps/
+
+# Создание index.yaml
+# helm repo index --url https://fillswim.github.io/HelmChats/ .
+
+name:         rabbitmq-app              # Название chart (будет в названи). Писать маленькими буквами для собственного Helm Chart репозитория
+description:  My helm chart to install RabbitMQ test application     # Описание
+type:         application
+version:      0.0.1                     # Версия самого chart (будет в названии)
+appVersion:   "0.0.1"                   # Версия приложения (будет в развертывании)

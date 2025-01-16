@@ -1,0 +1,34 @@
+# Helm Chart values ver. 0.0.1
+
+container:
+  # Образ
+  image:
+    registry: nexus.fillswim.local:8086
+    imagename: rabbitmq-consumer
+    imagetag: latest
+
+# HorizontalPodAutoscaler
+autoscling:
+  # Enable HPA resource
+  enabled: false
+
+# Сервис
+service:
+  # Enable service resource
+  enabled: false
+
+# Ingress
+ingress:
+  # Enable ingress resource
+  enabled: false
+
+# RabbitMQ Connection
+rabbitmq:
+  host: 192.168.2.228
+  port: 5672
+
+# Secret c логином и паролем
+existingSecret:
+  secretName: rabbitmq-my-secret
+  userKey: rabbitmq-user
+  passwordKey: rabbitmq-password
